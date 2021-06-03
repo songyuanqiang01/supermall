@@ -1,17 +1,27 @@
 <template>
-  <div id="app">
-    <router-view/>
-    <main-tab-bar/>
+  <div id="app" class="wrapper">
+    <keep-alive exclude="Detail">
+      <router-view />
+    </keep-alive>
+
+    <main-tab-bar />
+
+    <icon/>
+    <svg-icon/>
   </div>
 </template>
 
 <script>
-import MainTabBar from 'components/content/mainTabbar/MainTabBar'
+import MainTabBar from "components/content/mainTabbar/MainTabBar";
+import Icon from './components/content/Icon/Icon.vue';
+import SvgIcon from './components/content/Icon/svg.vue';
 
 export default {
   name: "App",
   components: {
     MainTabBar,
+    Icon,
+    SvgIcon,
   },
 };
 </script>
